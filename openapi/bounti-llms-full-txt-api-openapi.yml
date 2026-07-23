@@ -1,0 +1,24 @@
+openapi: 3.1.0
+info:
+  title: Bounti.ai Content Llms Full.txt API
+  description: Static content API for AI agents to access Bounti.ai product information, documentation, and blog content.
+  version: 1.0.0
+servers:
+- url: https://bounti.ai
+tags:
+- name: Llms Full.txt
+paths:
+  /llms-full.txt:
+    get:
+      operationId: getFullContent
+      summary: Get comprehensive content dump for deep AI access
+      description: Returns full product descriptions, features, pricing, blog summaries, and company information for AI deep access.
+      responses:
+        '200':
+          description: Full content in Markdown format
+          content:
+            text/plain:
+              schema:
+                type: string
+      tags:
+      - Llms Full.txt

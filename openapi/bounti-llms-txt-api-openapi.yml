@@ -1,0 +1,24 @@
+openapi: 3.1.0
+info:
+  title: Bounti.ai Content Llms Full.txt Llms.txt API
+  description: Static content API for AI agents to access Bounti.ai product information, documentation, and blog content.
+  version: 1.0.0
+servers:
+- url: https://bounti.ai
+tags:
+- name: Llms.txt
+paths:
+  /llms.txt:
+    get:
+      operationId: getContentIndex
+      summary: Get structured content index for AI consumption
+      description: Returns a structured overview of all Bounti.ai pages, solutions, and blog posts in llms.txt format.
+      responses:
+        '200':
+          description: Content index in Markdown format
+          content:
+            text/plain:
+              schema:
+                type: string
+      tags:
+      - Llms.txt
