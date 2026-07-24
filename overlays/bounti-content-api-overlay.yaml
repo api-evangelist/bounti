@@ -1,0 +1,20 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Bounti.ai Content API
+  version: 1.0.0
+extends: openapi/bounti-content-api-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-classification: agent-content-api
+    x-apievangelist-note: >-
+      Read-only, unauthenticated static Content API published for AI agents via
+      the bounti.ai AI-plugin manifest; serves llms.txt / llms-full.txt.
+- target: $.paths['/llms.txt'].get
+  update:
+    tags:
+    - Content
+- target: $.paths['/llms-full.txt'].get
+  update:
+    tags:
+    - Content

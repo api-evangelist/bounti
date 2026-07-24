@@ -1,0 +1,7 @@
+generated: '2026-07-18'
+method: generated
+skills:
+- file: bounti-content-access.md
+  name: Access Bounti.ai product content for agents
+  api: openapi/bounti-content-api-openapi.json
+  operations: [getContentIndex, getFullContent]

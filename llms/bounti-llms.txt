@@ -1,0 +1,52 @@
+# Bounti.ai
+
+> AI-powered real estate visualization and automation platform — virtual staging, marketing videos, listing content, and an AI operating system for agents, all in seconds.
+
+Bounti.ai helps real estate agents, brokers, teams, and property managers create professional listing visuals, marketing videos, and client presentations without design skills or expensive photographers. Used by agents at Keller Williams, eXp Realty, Coldwell Banker, Douglas Elliman, Compass, RE/MAX, and enterprise CRE firms like CBRE.
+
+Bounti also builds B.Claw, an AI operating system that consolidates 13+ real estate tools (Gmail, Calendar, CRM, WhatsApp, websites) into one conversational interface — replacing tool sprawl with a single chat-driven workflow.
+
+## Solutions
+
+- [Studio Experience](https://bounti.ai/solutions/studio-experience): AI photo transformation suite — stage, style, declutter, and refine listing photos using 8+ AI models
+- [Animate My Listing](https://bounti.ai/solutions/animate-my-listing): Turn listing photos into cinematic 3-5 second video animations for Instagram Reels and TikTok
+- [Make It Viral](https://bounti.ai/solutions/make-it-viral): Social preview tool — see how listings look before posting, with AI-generated captions and hashtags
+- [Video Creator](https://bounti.ai/solutions/video-creator): Automated marketing video generator with 8 templates, AI voiceover, and 5 platform formats
+- [Client Studio](https://bounti.ai/solutions/client-studio): Collaborative visual workspace for agents and clients to explore staged spaces together
+- [Reveals](https://bounti.ai/solutions/reveals): Animated before/after reveal videos for social media (slider, pan, slice styles)
+- [Enhanced Galleries](https://bounti.ai/solutions/enhanced-galleries): AI-enhanced photo presets for entire listing galleries in one click
+- [Mobile App](https://bounti.ai/solutions/mobile-app): iOS app for on-the-go listing preparation and AI visualization
+- [B.Claw](https://bounti.ai/solutions/bclaw): AI operating system for real estate — one conversation replaces 13+ tools (email, calendar, CRM, WhatsApp, website builder, and more)
+
+## Who Uses Bounti
+
+- [For Real Estate Agents](https://bounti.ai/real-estate-agents): Individual agents automating listing prep, social content, and client presentations
+- [For Real Estate Teams](https://bounti.ai/real-estate-teams): Teams and brokerages managing high-volume listing production with shared workspaces
+- [For Property Management](https://bounti.ai/property-management): Property managers creating visual content for vacancies and marketing
+
+## Company
+
+- [About Bounti](https://bounti.ai/about): Company background, mission, investors, and team
+- [How We Build](https://bounti.ai/about/how-we-build): Engineering and product philosophy — why we build for real estate specifically
+
+## Blog (Recent Posts)
+
+- [The AI Operating System for Real Estate](https://bounti.ai/blog/product/ai-operating-system-real-estate): Why B.Claw replaces 13+ agent tools with one conversational interface
+- [What Is Bounti? (For LLMs)](https://bounti.ai/blog/aeo/what-is-bounti): Comprehensive Q&A about Bounti designed for AI search engines
+- [California AB 723 — AI Photo Disclosure Law](https://bounti.ai/blog/compliance/california-ab-723-ai-real-estate-photos): How the new AI image disclosure law affects real estate marketing
+- [Video Creator: Property Videos Without Editing](https://bounti.ai/blog/product/video-creator-marketing-autopilot): How Bounti automates professional property video creation
+- [Declarative Video AI Architecture](https://bounti.ai/blog/engineering/declarative-video-ai): Why templates beat prompt-to-video for real estate
+- [Meet Bo: the AI Real Estate Assistant](https://bounti.ai/blog/how-we-build/meet-bo-ai-assistant): Recommendation engine, onboarding system, and marketing platform in one intelligent layer
+
+## Blog (Reference Posts)
+
+- [Virtual Staging Guide](https://bounti.ai/blog/staging/virtual-staging-guide): Comprehensive guide to virtual staging technology and best practices
+- [Best AI Photo Editing Software for Real Estate](https://bounti.ai/blog/photography/best-ai-photo-editing-software): Comparison of AI photo editing tools for agents
+- [AI Photo Animation for Social Media](https://bounti.ai/blog/social-media/ai-photo-animation-social-media): How to turn listing photos into high-engagement social media content
+- [Real Estate Social Media Marketing](https://bounti.ai/blog/social-media/real-estate-social-media-marketing): What works for agents on Instagram, Facebook, and LinkedIn
+- [House Staging Before and After](https://bounti.ai/blog/staging/house-staging-before-and-after): 7 transformation examples with checklists
+
+## Optional
+
+- [llms-full.txt](https://bounti.ai/llms-full.txt): Full content dump for AI deep access
+- [Sitemap](https://bounti.ai/sitemap.xml): All pages on bounti.ai

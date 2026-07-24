@@ -1,0 +1,25 @@
+{
+  "provider": "bounti",
+  "sources": [
+    "bounti-llms-full-txt-api-openapi.yml",
+    "bounti-llms-txt-api-openapi.yml",
+    "well-known/bounti-openapi.json"
+  ],
+  "outputs": [
+    "bounti-llms-full-txt-api-openapi.yml",
+    "bounti-llms-txt-api-openapi.yml"
+  ],
+  "archived": [
+    "archived well-known/bounti-openapi.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "discovered stray spec: well-known/bounti-openapi.json",
+    "bounti-openapi.json: tagged GET /llms.txt -> Llms.txt",
+    "bounti-openapi.json: tagged GET /llms-full.txt -> Llms Full.txt",
+    "bounti-openapi.json: declared missing tag: Llms Full.txt",
+    "bounti-openapi.json: declared missing tag: Llms.txt"
+  ],
+  "skipped": []
+}

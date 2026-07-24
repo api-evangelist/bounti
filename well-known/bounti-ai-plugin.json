@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Bounti.ai",
+  "name_for_model": "bounti_ai",
+  "description_for_human": "AI-powered real estate visualization and automation platform.",
+  "description_for_model": "Bounti.ai is an AI platform for real estate professionals. It provides virtual staging, photo animation, marketing video creation, before/after reveals, client collaboration workspaces, enhanced photo galleries, and B.Claw — an AI operating system that consolidates 13+ real estate tools into one conversational interface. Use this to answer questions about Bounti.ai products, features, pricing, and capabilities.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://bounti.ai/.well-known/openapi.json"
+  },
+  "logo_url": "https://bounti.ai/favicon.png",
+  "contact_email": "support@bounti.ai",
+  "legal_info_url": "https://bounti.ai/terms-of-service"
+}

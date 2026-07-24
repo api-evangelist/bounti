@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: https://bounti.ai/.well-known/
+host: https://bounti.ai
+documents:
+- path: /.well-known/ai-plugin.json
+  status: 200
+  file: bounti-ai-plugin.json
+- path: /.well-known/openapi.json
+  status: 200
+  file: bounti-openapi.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+notes: >-
+  bounti.ai publishes an AI-plugin manifest (auth type "none") that advertises a
+  static OpenAPI 3.1 Content API for AI agents, plus /llms.txt and
+  /llms-full.txt content-dump endpoints.

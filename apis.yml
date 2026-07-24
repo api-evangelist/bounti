@@ -1,7 +1,18 @@
 aid: bounti
 name: Bounti
-description: Bounti is a company surfaced as a portfolio company of bloomberg-beta, gv and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Bounti (Bounti Labs, bounti.ai) is an AI-powered real estate visualization and
+  automation platform founded in 2023 by Ashar Rizqi and Matt Cooley and backed
+  by GV (Google Ventures), Bloomberg Beta, Floodgate, Haystack, Octave Ventures
+  and MS&AD. Its products include AI virtual staging and photo enhancement,
+  cinematic listing-photo animation, automated marketing-video creation,
+  before/after reveal videos, collaborative client studios, and B.Claw — an AI
+  operating system that consolidates 13+ real estate tools (Gmail, calendar,
+  CRM, WhatsApp, website builder) into one conversational interface. Bounti does
+  not publish a general integration API, but it does expose an agent-facing,
+  unauthenticated Content API (advertised via an AI-plugin manifest at
+  /.well-known/ai-plugin.json) plus /llms.txt and /llms-full.txt so AI assistants
+  can accurately answer questions about its products, pricing, and content.
 url: https://raw.githubusercontent.com/api-evangelist/bounti/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,12 +21,55 @@ x-backed-by:
 - gv
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://bounti.ai/favicon.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Real Estate
+- Artificial Intelligence
+- Marketing
+- Sales Enablement
+- Virtual Staging
+- Content Generation
+- AI Agents
+apis:
+- aid: bounti:bounti-llms-full-txt-api
+  name: Bounti Llms Full.txt API
+  description: The Llms Full.txt API from Bounti — 1 operation(s) for llms full.txt.
+  humanURL: https://bounti.ai/
+  baseURL: https://bounti.ai
+  tags:
+  - Llms Full.txt
+  properties:
+  - type: OpenAPI
+    url: openapi/bounti-llms-full-txt-api-openapi.yml
+  - type: APIReference
+    url: https://bounti.ai/.well-known/openapi.json
+- aid: bounti:bounti-llms-txt-api
+  name: Bounti Llms.txt API
+  description: The Llms.txt API from Bounti — 1 operation(s) for llms.txt.
+  humanURL: https://bounti.ai/
+  baseURL: https://bounti.ai
+  tags:
+  - Llms.txt
+  properties:
+  - type: OpenAPI
+    url: openapi/bounti-llms-txt-api-openapi.yml
+  - type: APIReference
+    url: https://bounti.ai/.well-known/openapi.json
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +78,36 @@ maintainers:
 common:
 - type: Website
   url: https://bounti.ai/
+- type: About
+  url: https://bounti.ai/about
+- type: Blog
+  url: https://bounti.ai/blog
+- type: Pricing
+  url: https://bounti.ai/pricing
+- type: SignUp
+  url: https://claw.bounti.ai/sign-up
+- type: Login
+  url: https://re.bounti.ai/real-estate/sign-in
+- type: TermsOfService
+  url: https://bounti.ai/terms-of-service
+- type: PrivacyPolicy
+  url: https://bounti.ai/privacy-policy
+- type: Support
+  url: mailto:support@bounti.ai
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bounti-ai
+- type: WellKnown
+  url: well-known/bounti-well-known.yml
+- type: LLMsTxt
+  url: llms/bounti-llms.txt
+- type: MCPServer
+  url: mcp/bounti-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/bounti-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
