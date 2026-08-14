@@ -11,8 +11,13 @@ description: >-
   CRM, WhatsApp, website builder) into one conversational interface. Bounti does
   not publish a general integration API, but it does expose an agent-facing,
   unauthenticated Content API (advertised via an AI-plugin manifest at
-  /.well-known/ai-plugin.json) plus /llms.txt and /llms-full.txt so AI assistants
-  can accurately answer questions about its products, pricing, and content.
+  /.well-known/ai-plugin.json, alongside an MCP discovery manifest at
+  /.well-known/mcp.json) plus /llms.txt and /llms-full.txt so AI assistants can
+  accurately answer questions about its products, pricing, and content. Bounti also
+  publishes a catalog of 303 named B.Claw skills as machine-readable schema.org
+  SoftwareApplication definitions at bounti.ai/skills, and 34 connector listings at
+  bounti.ai/integrations — but those skills execute only inside the authenticated
+  B.Claw product, whose API at claw.bounti.ai/api has no published contract.
 url: https://raw.githubusercontent.com/api-evangelist/bounti/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -35,7 +40,7 @@ accessModel:
 image: https://bounti.ai/favicon.png
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-14'
 tags:
 - Company
 - Real Estate
@@ -108,8 +113,34 @@ common:
   url: skills/_index.yml
 - type: DomainSecurity
   url: security/bounti-domain-security.yml
+- type: SecurityTxt
+  url: well-known/bounti-security.txt
+- type: VulnerabilityDisclosure
+  url: security/bounti-vulnerability-disclosure.yml
+- type: Security
+  url: security/bounti-vulnerability-disclosure.yml
+- type: Packages
+  url: packages/bounti-packages.yml
+- type: ToolCrosswalk
+  url: mcp/bounti-tool-crosswalk.yml
+- type: Authentication
+  url: authentication/bounti-authentication.yml
+- type: Conventions
+  url: conventions/bounti-conventions.yml
+- type: ErrorCatalog
+  url: errors/bounti-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/bounti-lifecycle.yml
+- type: Conformance
+  url: conformance/bounti-conformance.yml
+- type: Plans
+  url: plans/bounti-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/bounti-rate-limits.yml
+- type: Integrations
+  url: https://bounti.ai/integrations
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-14'
+  status: enriched
+  artifacts_added: 12
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
