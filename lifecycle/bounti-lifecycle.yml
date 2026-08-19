@@ -1,0 +1,52 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  https://bounti.ai/sitemap-0.xml (607 URLs enumerated), the published OpenAPI, and direct probes of
+  candidate lifecycle URLs on 2026-08-14
+versioning:
+  scheme: none
+  current: '1.0.0'
+  docs: null
+  detail: >-
+    info.version 1.0.0 in the published OpenAPI and version 1.0.0 in the MCP manifest. Neither is
+    negotiable by a caller — no version segment, header, or query parameter exists.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No deprecation policy, no Sunset/Deprecation header support (RFC 8594), nothing published.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  detail: >-
+    None published. Probed https://bounti.ai/status (404) and status.bounti.ai (does not resolve). No
+    third-party status page (Statuspage/Instatus/Better Stack) is linked from any Bounti page.
+changelog:
+  url: null
+  detail: >-
+    No dated changelog exists. The sitemap's full 607-URL enumeration contains exactly one
+    product-update post (https://bounti.ai/blog/product/updates-feb-march-2025) — a single blog entry,
+    not a maintained release log — so no changelog artifact is emitted rather than manufacturing one
+    from blog posts.
+deprecated_operations: []
+stability:
+  detail: >-
+    The published Content API has been byte-identical across two harvests (2026-07-18 and 2026-08-14):
+    /.well-known/openapi.json and /llms.txt both diff clean against the stored copies. The surface has
+    grown in one place only — /.well-known/mcp.json is new since the July probe.
+evidence:
+- url: https://bounti.ai/status
+  status: 404
+- url: https://bounti.ai/changelog
+  status: 404
+- url: https://bounti.ai/docs
+  status: 404
+- url: https://bounti.ai/developers
+  status: 404
+- url: https://status.bounti.ai
+  status: 0
+  note: DNS does not resolve.
+- url: https://docs.bounti.ai
+  status: 0
+  note: DNS does not resolve.

@@ -1,0 +1,51 @@
+generated: '2026-08-14'
+method: probed
+source: >-
+  https://bounti.ai/.well-known/ai-plugin.json (provider-declared), https://bounti.ai/.well-known/openapi.json,
+  and live unauthenticated probes of https://claw.bounti.ai/api on 2026-08-14
+summary:
+  types: [none]
+  api_key_in: []
+  oauth2_flows: []
+  note: >-
+    0-working/derive-authentication.py produced no profile for this provider because the published
+    OpenAPI declares no securitySchemes at all. That is not a harvesting gap — it is the correct
+    reading of the contract: Bounti's only public API is deliberately unauthenticated.
+schemes:
+- name: none
+  type: none
+  applies_to: Bounti.ai Content API (GET /llms.txt, GET /llms-full.txt)
+  sources: [openapi/_original/bounti-openapi.json, well-known/bounti-ai-plugin.json]
+  evidence: >-
+    The provider's own AI-plugin manifest declares "auth": {"type": "none"}, the OpenAPI declares no
+    securitySchemes and applies no security to either operation, and both endpoints return 200 to an
+    anonymous GET. This is an intentional agent-facing content surface, not a missing auth model.
+gated_surfaces:
+- name: B.Claw product API
+  host: https://claw.bounti.ai
+  path: /api
+  http_status: 401
+  content_type: application/json
+  envelope: '{"error":"unauthorized","message":"Authentication required"}'
+  scheme: undocumented
+  evidence: >-
+    Every path probed under /api (/api, /api/v1, /api/health, /api/docs, /api/openapi.json, /api/mcp,
+    /api/user, /api/me) returned the identical 401 JSON envelope on 2026-08-14. No WWW-Authenticate
+    header is returned, no auth documentation is published, and no OAuth or OIDC discovery document
+    exists on any Bounti host (/.well-known/openid-configuration, /oauth-authorization-server and
+    /oauth-protected-resource all 404 on bounti.ai and return only an SPA HTML shell on claw.bounti.ai).
+    The scheme is therefore recorded as undocumented rather than guessed.
+- name: Real-estate product
+  host: https://re.bounti.ai
+  path: /real-estate/sign-in
+  scheme: interactive-login
+  evidence: Human sign-in page; no API surface found behind it.
+third_party_authorization:
+  model: oauth-outbound
+  note: >-
+    B.Claw connects to the user's own third-party accounts (Gmail, Google Calendar, Follow Up Boss,
+    kvCORE, HubSpot, Salesforce, DocuSign and 30+ others catalogued at https://bounti.ai/integrations)
+    via OAuth authorized inside the product. This is Bounti acting as an OAuth CLIENT against other
+    providers — it is not an authorization surface Bounti exposes to callers, and it grants an agent
+    no way in.
+scopes: []

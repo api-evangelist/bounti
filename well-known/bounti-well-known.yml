@@ -1,23 +1,113 @@
-generated: '2026-07-18'
+generated: '2026-08-14'
 method: searched
 source: https://bounti.ai/.well-known/
-host: https://bounti.ai
-documents:
-- path: /.well-known/ai-plugin.json
-  status: 200
-  file: bounti-ai-plugin.json
-- path: /.well-known/openapi.json
-  status: 200
-  file: bounti-openapi.json
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/openid-configuration
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
 notes: >-
-  bounti.ai publishes an AI-plugin manifest (auth type "none") that advertises a
-  static OpenAPI 3.1 Content API for AI agents, plus /llms.txt and
-  /llms-full.txt content-dump endpoints.
+  bounti.ai publishes an unusually complete agent-discovery surface for a company with no
+  general-purpose developer API: an AI-plugin manifest (auth type "none"), a static OpenAPI 3.1
+  Content API, an MCP discovery manifest, and /llms.txt + /llms-full.txt content dumps. It publishes
+  no OAuth/OIDC discovery of any kind. The RFC 9116 security.txt is served from the B.Claw
+  application host (claw.bounti.ai), not the marketing apex — bounti.ai/.well-known/security.txt
+  404s. claw.bounti.ai and re.bounti.ai are single-page apps whose catch-all answers HTTP 200 with an
+  HTML shell for every unmatched /.well-known/* path; only claw.bounti.ai's security.txt returned a
+  real text/plain document (content-length 134) and only that one is recorded as a hit.
+hosts:
+- host: https://bounti.ai
+  documents:
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: application/json
+    file: bounti-ai-plugin.json
+  - path: /.well-known/openapi.json
+    status: 200
+    content_type: application/json
+    file: ../openapi/_original/bounti-openapi.json
+    note: OpenAPI 3.1.0 Content API; byte-identical to the copy harvested in the previous round.
+  - path: /.well-known/mcp.json
+    status: 200
+    content_type: application/json
+    file: bounti-mcp-manifest.json
+    note: >-
+      New since the 2026-07-18 probe. A discovery manifest only — it names the llms.txt/llms-full.txt
+      content endpoints under capabilities.content and declares NO MCP transport, endpoint URL or
+      tool list, so it is not a callable MCP server.
+  - path: /.well-known/apple-app-site-association
+    status: 200
+    content_type: application/json
+    note: 'Served but empty: {"applinks":{"apps":[],"details":[]}} — no universal links declared.'
+  - path: /.well-known/assetlinks.json
+    status: 200
+    content_type: application/json
+    note: 'Served but empty: [] — no Android app links declared.'
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://claw.bounti.ai
+  note: >-
+    B.Claw application host. SPA catch-all returns 200 with an HTML shell for every unmatched path,
+    so only the text/plain security.txt below is treated as a real document; every other 200 here is
+    recorded as a miss.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain; charset=utf-8
+    file: bounti-security.txt
+    note: RFC 9116. Contact mailto:security@bounti.ai, Policy https://bounti.ai/privacy-policy, Expires 2027-04-01.
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    note: SPA shell, not an agent card — recorded as a miss.
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    note: SPA shell, not an agent card — recorded as a miss.
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    note: SPA shell, not an OIDC discovery document — recorded as a miss.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    note: SPA shell — recorded as a miss.
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    content_type: text/html
+    note: SPA shell — recorded as a miss.
+- host: https://re.bounti.ai
+  note: >-
+    Real-estate product sign-in host. SPA catch-all returns 200 with an HTML shell for every
+    /.well-known/* path probed, including security.txt and both agent-card paths. No real documents.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    note: SPA shell — recorded as a miss.
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    note: SPA shell — recorded as a miss.
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    note: SPA shell — recorded as a miss.
+- host: https://api.bounti.ai
+  note: Host resolves but returns HTTP 404 with an empty body for every path probed; no API is served there.
+  documents:
+  - path: /.well-known/openapi.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404

@@ -1,0 +1,35 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org, rubygems.org, crates.io, itunes.apple.com lookup/search,
+  and the bounti.ai site (no SDK or developer download page exists)
+sdk_count: 0
+packages:
+- language: null
+  registry: app-store
+  name: 'Bounti: AI Home Staging'
+  bundle_id: com.bountihq.bounti
+  url: https://apps.apple.com/us/app/bounti-ai-home-staging/id6751253753
+  install: App Store (iOS 17.0+)
+  official: true
+  version: '2.3'
+  published: '2026-04-08'
+  first_released: '2025-11-24'
+  publisher: Bounti Labs Inc.
+  kind: mobile-app
+  note: >-
+    A consumer iOS application, not a client library — it is recorded here because it is Bounti's
+    only first-party distributed artifact. Version and date read from the iTunes lookup API
+    (currentVersionReleaseDate 2026-04-08T10:57:04Z).
+notes: >-
+  No first-party client library exists in any public registry. Probed unauthenticated and recorded
+  the result: npm registry search for "bounti" returns no Bounti Labs package (the single hit,
+  @mahdaad/editor-vue, is unrelated); pypi.org/pypi/bounti/json 404; rubygems.org/api/v1/gems/
+  bounti.json 404; crates.io/api/v1/crates/bounti 404; no Maven, NuGet or Go module found. This is
+  consistent with the surface Bounti actually publishes — an unauthenticated static Content API for
+  AI agents, not an integration API, so there is nothing for an SDK to wrap. No `SDKs` pointer is
+  emitted because no client library exists.
+  DATA DEFECT WORTH REPORTING TO THE PROVIDER: the schema.org Organization block embedded on every
+  bounti.ai page lists sameAs https://apps.apple.com/app/bounti-ai/id6476114617, which returns HTTP
+  404 and does not resolve in the iTunes lookup API. The live app is track id 6751253753. Bounti is
+  publishing a dead App Store link in its own structured data.

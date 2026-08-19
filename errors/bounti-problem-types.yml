@@ -1,0 +1,45 @@
+generated: '2026-08-14'
+method: derived
+source: openapi/_original/bounti-openapi.json + live probes of claw.bounti.ai on 2026-08-14
+format: custom
+rfc9457: false
+notes: >-
+  CONTRACT GAP, recorded as found: Bounti's published OpenAPI declares NO 4xx or 5xx responses for
+  either operation — only a 200 each. An agent reading the spec has no error contract to code
+  against. The one error shape Bounti actually returns was observed by probing, not read from a
+  document, and it belongs to the separate authenticated B.Claw API rather than to the published
+  Content API. There is no error reference page anywhere on bounti.ai to enrich this from.
+envelope:
+  media_type: application/json
+  shape: '{"error": "<machine slug>", "message": "<human sentence>"}'
+  fields:
+  - name: error
+    type: string
+    description: Machine-readable slug.
+  - name: message
+    type: string
+    description: Human-readable sentence.
+problems:
+- status: 401
+  code: unauthorized
+  title: Authentication required
+  body: '{"error":"unauthorized","message":"Authentication required"}'
+  surface: B.Claw product API
+  source: probed https://claw.bounti.ai/api
+  fetched: '2026-08-14'
+  remediation: >-
+    Not documented. No WWW-Authenticate header is returned and Bounti publishes no authentication
+    documentation for this surface, so there is no published path from the error to a fix.
+- status: 404
+  title: Not Found
+  body: HTML (Next.js 404 page)
+  surface: bounti.ai marketing/content host
+  source: probed https://bounti.ai/openapi.json and other unmatched paths
+  fetched: '2026-08-14'
+  note: >-
+    Returns text/html, not JSON — a caller of the Content API that mistypes a path gets an HTML page,
+    not a machine-readable error.
+declared_in_spec:
+  '2xx': 2
+  '4xx': 0
+  '5xx': 0

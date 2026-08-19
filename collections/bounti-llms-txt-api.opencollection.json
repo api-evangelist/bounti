@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bounti.ai Content Llms Full.txt Llms.txt API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Llms.txt",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get structured content index for AI consumption",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://bounti.ai/llms.txt"
+          },
+          "docs": "Returns a structured overview of all Bounti.ai pages, solutions, and blog posts in llms.txt format."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

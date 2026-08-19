@@ -1,0 +1,15 @@
+{
+  "name": "Bounti.ai",
+  "description": "AI-powered real estate visualization and automation platform. Virtual staging, marketing videos, listing content, and B.Claw AI operating system for agents.",
+  "version": "1.0.0",
+  "capabilities": {
+    "content": {
+      "index": "https://bounti.ai/llms.txt",
+      "full": "https://bounti.ai/llms-full.txt"
+    }
+  },
+  "contact": {
+    "email": "support@bounti.ai",
+    "url": "https://bounti.ai/about"
+  }
+}

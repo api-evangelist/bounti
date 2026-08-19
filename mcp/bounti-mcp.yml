@@ -1,22 +1,56 @@
-generated: '2026-07-18'
+generated: '2026-08-14'
 method: derived
 status: candidate
-source: openapi/bounti-content-api-openapi.json
+source: openapi/_original/bounti-openapi.json
 notes: >-
-  No official hosted/remote MCP server was found for Bounti.ai. This is a
-  candidate tool list derived one-to-one from the operations in the published
-  Bounti.ai Content API (an agent-facing static content API, auth type "none").
+  Bounti publishes an MCP DISCOVERY MANIFEST at https://bounti.ai/.well-known/mcp.json (new since the
+  2026-07-18 probe, HTTP 200, application/json — saved verbatim at well-known/bounti-mcp-manifest.json).
+  It is NOT a callable MCP server: it declares no transport, no endpoint URL and no tool list, only a
+  capabilities.content block naming the two static content endpoints. No hosted or stdio MCP server was
+  found for Bounti on the docs, in npm, or in the public MCP registries. The tools below therefore
+  remain a CANDIDATE list derived one-to-one from the operations in the published Bounti.ai Content
+  API (an agent-facing static content API, auth type "none"). No endpoint URL is invented.
+manifest:
+  published: true
+  url: https://bounti.ai/.well-known/mcp.json
+  file: ../well-known/bounti-mcp-manifest.json
+  http_status: 200
+  fetched: '2026-08-14'
+  name: Bounti.ai
+  version: 1.0.0
+  declares_transport: false
+  declares_endpoint: false
+  declares_tools: false
+  capabilities:
+    content:
+      index: https://bounti.ai/llms.txt
+      full: https://bounti.ai/llms-full.txt
+  contact:
+    email: support@bounti.ai
+    url: https://bounti.ai/about
 server:
   name: bounti
   transport: http
 tools:
 - name: getContentIndex
-  description: >-
-    Return a structured overview of all Bounti.ai pages, solutions, and blog
-    posts in llms.txt (Markdown) format.
-  source_operation: openapi/bounti-content-api-openapi.json#getContentIndex
+  description: Return a structured overview of all Bounti.ai pages, solutions, and blog posts in llms.txt
+    (Markdown) format.
+  source_operation: openapi/bounti-llms-txt-api-openapi.yml#getContentIndex
 - name: getFullContent
-  description: >-
-    Return the comprehensive content dump (full product descriptions, features,
-    pricing, blog summaries, company info) for deep AI access.
-  source_operation: openapi/bounti-content-api-openapi.json#getFullContent
+  description: Return the comprehensive content dump (full product descriptions, features, pricing, blog
+    summaries, company info) for deep AI access.
+  source_operation: openapi/bounti-llms-full-txt-api-openapi.yml#getFullContent
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: none
+  verified: probed
+  tools: 2
+  checked: '2026-08-14'
+  source: >-
+    Probed https://bounti.ai/.well-known/mcp.json (200 — manifest only, no endpoint) and
+    https://claw.bounti.ai/mcp (200 HTML SPA shell) and https://claw.bounti.ai/api/mcp (401 JSON
+    "Authentication required"). Nobody ships a reachable MCP server; the two content operations are
+    unauthenticated and directly callable over plain HTTP GET instead.

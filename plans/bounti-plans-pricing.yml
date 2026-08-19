@@ -1,0 +1,75 @@
+generated: '2026-08-14'
+method: searched
+source: https://bounti.ai/pricing
+product: B.Claw
+currency: USD
+billing_period: month
+plan_count: 5
+notes: >-
+  These are the published subscription plans for B.Claw, the AI operating system product. They are NOT
+  API plans — Bounti sells no API access at any tier and publishes no API pricing. Plans are sized by
+  monthly ACTION VOLUME, not by feature gating: the provider states every plan from Free to Heavy
+  includes every feature (morning briefings, inbox triage, CMA generation, 250+ tool integrations,
+  draft-before-send safety). All plans are month-to-month; the provider states there are no annual or
+  volume discounts and no team/brokerage tier ("multi-agent / shared-inbox / brokerage tiers are on the
+  roadmap but not shipping today"; brokerage interest goes to sales@bounti.ai). Prices and quotas below
+  are transcribed verbatim from the pricing page and its embedded schema.org Product/FAQPage blocks.
+  Bounti's separate /real-estate-crm-pricing page was checked and deliberately excluded: it is a
+  competitor price-comparison article about other vendors' CRMs, not Bounti's own pricing.
+plans:
+- name: Free
+  price: 0
+  currency: USD
+  period: month
+  quota: ~1 week of full-product use
+  credit_card_required: false
+  note: Free trial. Provider states every feature is included, same as the paid plans.
+- name: Start
+  price: 99
+  currency: USD
+  period: month
+  quota: ~100 actions / month
+  audience: new agents
+  overage: Charged in $5 increments at the rate set by the plan.
+- name: Light
+  price: 219
+  currency: USD
+  period: month
+  quota: ~240 actions / month
+  audience: working agents
+  overage: Charged in $5 increments at the rate set by the plan.
+- name: Medium
+  price: 349
+  currency: USD
+  period: month
+  quota: 40+ actions / day
+  audience: most popular tier
+  overage: Charged in $5 increments at the rate set by the plan.
+- name: Heavy
+  price: 599
+  currency: USD
+  period: month
+  quota: 80+ actions / day
+  audience: power users
+  note: Page also cites 10+ CMAs per month at this tier.
+  overage: Charged in $5 increments at the rate set by the plan.
+metering:
+  unit: action
+  definition: >-
+    "One meaningful unit of B.Claw work — drafting an email reply, generating a CMA, running the
+    morning briefing, triaging an inbox batch, summarizing a document, or completing a multi-step
+    task." Read-only operations (querying the CRM, listing the calendar) do not count.
+  rollover: Action allotments roll over within the month, inside the comfort zone.
+  overage_increment: 5 USD
+  spend_cap:
+    name: comfort zone
+    default: plan price + $50
+    warning_threshold: 80% of plan
+    behavior: >-
+      Work is not cut off at the allotment; the user sets a monthly spending cap and receives a
+      heads-up notification at 80% to raise the cap, upgrade, or pause.
+  top_ups: $5 increments, anytime.
+plan_changes:
+  upgrade: Immediate, prorated.
+  downgrade: Takes effect at the next billing cycle.
+  commitment: None; month-to-month.

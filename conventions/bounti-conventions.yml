@@ -1,0 +1,68 @@
+generated: '2026-08-14'
+method: derived
+source: openapi/_original/bounti-openapi.json + live probes of bounti.ai and claw.bounti.ai on 2026-08-14
+notes: >-
+  Bounti's public API is two unauthenticated GETs that return Markdown as text/plain. Most
+  cross-cutting API semantics simply do not exist here, and that is the honest finding rather than a
+  harvesting gap — there is no JSON resource model, so there is nothing to paginate, expand, or make
+  idempotent. Recorded so the absence is legible.
+authentication:
+  style: none
+  detail: Anonymous GET. See authentication/bounti-authentication.yml.
+idempotency:
+  supported: false
+  header: null
+  detail: >-
+    No idempotency key is documented or declared anywhere. Not applicable to the published surface:
+    both operations are safe GETs, which are idempotent by HTTP method rather than by contract. No
+    Idempotency pointer is emitted in apis.yml — there is no idempotency contract to point at.
+pagination:
+  supported: false
+  detail: Neither operation accepts parameters; each returns one complete document.
+field_expansion:
+  supported: false
+sparse_fields:
+  supported: false
+metadata:
+  supported: false
+request_tracing:
+  request_id_header: null
+  detail: >-
+    bounti.ai (Vercel/Next.js) returns no correlation id on the content endpoints. claw.bounti.ai
+    (Google Frontend) returns x-cloud-trace-context on every response, including the 401, which is a
+    platform trace id rather than a documented client-facing request id.
+versioning:
+  scheme: none
+  detail: >-
+    No version appears in the path, a header, or a query parameter. The OpenAPI carries info.version
+    1.0.0 and the MCP manifest carries version 1.0.0, but neither is negotiable by a caller and
+    neither has changed since first harvest.
+content_negotiation:
+  request: none
+  response_media_types: [text/plain]
+  detail: Responses are Markdown served as text/plain; there is no JSON representation of the content.
+error_envelope:
+  format: custom
+  shape: '{"error": "<slug>", "message": "<human sentence>"}'
+  rfc9457: false
+  detail: >-
+    Observed on the gated B.Claw API (claw.bounti.ai/api → 401). The public Content API declares no
+    error responses at all in its OpenAPI. See errors/bounti-problem-types.yml.
+rate_limit_signaling:
+  headers: []
+  status_on_exhaustion: null
+  detail: No rate-limit headers observed and none documented. See rate-limits/bounti-rate-limits.yml.
+base_url:
+  value: https://bounti.ai
+  detail: >-
+    The API is served from the website root: the provider's own OpenAPI declares
+    servers[0].url = https://bounti.ai and both operations are verified live there (200). The
+    repair-api-bases pass flags this as a "marketing-base" and returns no-usable-base, which is a
+    false positive for this provider — the apex genuinely IS the API host, so apis.yml baseURL is left
+    unchanged.
+cross_references:
+  authentication: authentication/bounti-authentication.yml
+  errors: errors/bounti-problem-types.yml
+  lifecycle: lifecycle/bounti-lifecycle.yml
+  rate_limits: rate-limits/bounti-rate-limits.yml
+  plans: plans/bounti-plans-pricing.yml

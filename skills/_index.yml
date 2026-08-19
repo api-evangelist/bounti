@@ -1,7 +1,37 @@
-generated: '2026-07-18'
-method: generated
+generated: '2026-08-14'
+method: searched
+source: https://bounti.ai/skills
+notes: >-
+  Two kinds of skill live in this directory. (1) PROVIDER-PUBLISHED: Bounti publishes a catalog of 303
+  named B.Claw skills at https://bounti.ai/skills, each carrying a schema.org SoftwareApplication block
+  with a name, description and featureList. The whole catalog is harvested verbatim into
+  bounti-bclaw-skill-catalog.yml, and two marquee definitions are reproduced as markdown below. These
+  skills execute inside the authenticated B.Claw product — Bounti publishes no operation, endpoint or
+  input schema for any of them, so none is agent-callable from outside. (2) GENERATED: one skill
+  grounded in the two real, unauthenticated operationIds in Bounti's published Content API.
+published_catalog:
+  url: https://bounti.ai/skills
+  file: bounti-bclaw-skill-catalog.yml
+  skill_count: 303
+  invocable_by_agents: false
+  categories: [buyer consultation, client management, compliance, investment, listing, listings,
+    market intelligence, marketing, negotiation, open house, pricing, productivity, prospecting,
+    scripting, transaction]
 skills:
 - file: bounti-content-access.md
   name: Access Bounti.ai product content for agents
-  api: openapi/bounti-content-api-openapi.json
+  api: openapi/bounti-llms-txt-api-openapi.yml
   operations: [getContentIndex, getFullContent]
+  method: generated
+- file: bounti-bclaw-cma-runner.md
+  name: B.Claw — Comparative Market Analysis Runner skill
+  api: null
+  operations: []
+  method: searched
+  source: https://bounti.ai/skills/cma-runner
+- file: bounti-bclaw-daily-morning-briefing.md
+  name: B.Claw — Daily Morning Briefing skill
+  api: null
+  operations: []
+  method: searched
+  source: https://bounti.ai/skills/daily-morning-briefing

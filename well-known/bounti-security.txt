@@ -1,0 +1,4 @@
+Contact: mailto:security@bounti.ai
+Preferred-Languages: en
+Policy: https://bounti.ai/privacy-policy
+Expires: 2027-04-01T00:00:00.000Z

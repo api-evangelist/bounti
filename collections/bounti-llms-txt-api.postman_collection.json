@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "ce1db7ce-1fe7-4d99-9a9e-32efc554c86b",
+      "name": "Llms.txt",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3c94f4dc-a250-4333-a3a8-5157cd702142",
+          "name": "Get structured content index for AI consumption",
+          "request": {
+            "name": "Get structured content index for AI consumption",
+            "description": {
+              "content": "Returns a structured overview of all Bounti.ai pages, solutions, and blog posts in llms.txt format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "llms.txt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "928aae0b-070f-4eac-ac26-1d23b9dc46cf",
+              "name": "Content index in Markdown format",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "llms.txt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://bounti.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a6bbe584-91d9-4bf5-8f3e-f019810be289",
+    "name": "Bounti.ai Content Llms Full.txt Llms.txt API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Static content API for AI agents to access Bounti.ai product information, documentation, and blog content.",
+      "type": "text/plain"
+    }
+  }
+}

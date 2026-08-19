@@ -1,0 +1,27 @@
+generated: '2026-08-14'
+method: searched
+source: https://bounti.ai/pricing
+limit_count: 0
+rate_limits: []
+notes: >-
+  Bounti publishes no API rate limits, no rate-limit response headers, and no documented 429 behavior.
+  There is no developer documentation of any kind to publish them in. Probed and recorded on
+  2026-08-14: the two unauthenticated content operations (GET https://bounti.ai/llms.txt and
+  /llms-full.txt) return 200 with no X-RateLimit-*, no RateLimit-*, and no Retry-After header; the
+  published OpenAPI at /.well-known/openapi.json declares only 200 responses and no 429. The
+  authenticated B.Claw product API at https://claw.bounti.ai/api returns 401 to every unauthenticated
+  request, so no runtime limit signal is observable there either.
+  The only consumption limit Bounti publishes is COMMERCIAL, not protocol: a monthly "action"
+  allotment per subscription tier (~100 / ~240 / 40+ per day / 80+ per day), with overage billed in $5
+  increments and a user-set "comfort zone" spending cap that warns at 80% rather than blocking. That is
+  captured in plans/bounti-plans-pricing.yml, not here, because it is enforced in billing and carries
+  no HTTP signal an agent can read.
+observed:
+- url: https://bounti.ai/llms.txt
+  http_status: 200
+  rate_limit_headers: []
+  fetched: '2026-08-14'
+- url: https://claw.bounti.ai/api
+  http_status: 401
+  rate_limit_headers: []
+  fetched: '2026-08-14'

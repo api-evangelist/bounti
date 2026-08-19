@@ -1,13 +1,34 @@
-generated: '2026-07-18'
+generated: '2026-08-14'
 method: probed
-source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts (0-working/probe-domain-security.py, plus hand probes of the product subdomains)
 hosts:
 - host: bounti.ai
   https: true
   tls_version: TLSv1.3
-  cert_expires: Sep 10 01:36:03 2026 GMT
+  cert_expires: Nov  9 00:49:15 2026 GMT
   hsts: true
   hsts_max_age: 31556926
+  hsts_include_subdomains: false
+- host: claw.bounti.ai
+  https: true
+  cert_expires: Oct 16 05:28:07 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: true
+  server: Google Frontend
+  note: >-
+    B.Claw application host. Response headers also carry x-frame-options DENY, x-content-type-options
+    nosniff, referrer-policy strict-origin-when-cross-origin, cross-origin-resource-policy
+    same-origin, permissions-policy camera=() geolocation=() and cache-control no-store — a
+    materially stronger header posture than the marketing apex.
+- host: re.bounti.ai
+  https: true
+  cert_expires: Sep 20 04:16:34 2026 GMT
+  hsts: false
+  note: Real-estate product sign-in host; no Strict-Transport-Security header observed.
+- host: api.bounti.ai
+  https: true
+  note: Resolves and terminates TLS but returns HTTP 404 with an empty body for every path probed.
 domains:
 - domain: bounti.ai
   dnssec: false
@@ -15,3 +36,6 @@ domains:
   spf: true
   dmarc: true
   dmarc_policy: none
+  note: >-
+    DMARC policy is p=none (monitor only) — it publishes a record but enforces nothing. No CAA
+    records and no DNSSEC.

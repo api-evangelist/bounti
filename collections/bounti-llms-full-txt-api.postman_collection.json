@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "67e95b2c-b50a-4ca6-b97d-067ddc391d87",
+      "name": "Llms Full.txt",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0422d434-3912-495d-9ef4-3878c09ae25a",
+          "name": "Get comprehensive content dump for deep AI access",
+          "request": {
+            "name": "Get comprehensive content dump for deep AI access",
+            "description": {
+              "content": "Returns full product descriptions, features, pricing, blog summaries, and company information for AI deep access.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "llms-full.txt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a9b93e9e-2877-4339-8cb8-cf7909ecb0a1",
+              "name": "Full content in Markdown format",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "llms-full.txt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://bounti.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a05ccd84-4b03-4cca-880f-518586fa6595",
+    "name": "Bounti.ai Content Llms Full.txt API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Static content API for AI agents to access Bounti.ai product information, documentation, and blog content.",
+      "type": "text/plain"
+    }
+  }
+}

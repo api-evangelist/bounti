@@ -1,0 +1,76 @@
+generated: '2026-08-14'
+method: derived
+source: >-
+  openapi/_original/bounti-openapi.json, well-known/ (ai-plugin.json, mcp.json, security.txt),
+  llms/bounti-llms.txt, and live probes on 2026-08-14
+notes: >-
+  Bounti conforms to the discovery and agent-facing conventions and to almost nothing else. There is
+  no identity, authorization, or industry standard in play because there is no authenticated public
+  API. No compliance certifications (SOC 2, ISO 27001, PCI DSS, HIPAA, FedRAMP) are published
+  anywhere on any Bounti host, so no Compliance pointer is emitted.
+standards:
+- id: openapi-3.1
+  conforms: true
+  evidence: >-
+    https://bounti.ai/.well-known/openapi.json parses as OpenAPI 3.1.0 with servers[] and paths and is
+    referenced by the provider's own ai-plugin manifest.
+- id: llms-txt
+  conforms: true
+  evidence: https://bounti.ai/llms.txt (200) and /llms-full.txt (200), both linked from the MCP manifest.
+- id: ai-plugin-manifest
+  conforms: true
+  evidence: https://bounti.ai/.well-known/ai-plugin.json — schema_version v1, auth type none.
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: >-
+    https://claw.bounti.ai/.well-known/security.txt — Contact, Preferred-Languages, Policy and an
+    unexpired Expires field. Partial: not served from the apex bounti.ai (404).
+- id: rfc8615-well-known
+  conforms: true
+  evidence: Four real documents served under /.well-known/ on bounti.ai plus security.txt on claw.bounti.ai.
+- id: schema-org-structured-data
+  conforms: true
+  evidence: >-
+    Organization, WebSite, BreadcrumbList, FAQPage, Product and per-skill SoftwareApplication JSON-LD
+    blocks across bounti.ai; the 303-skill catalog was harvested entirely from this structured data.
+  defect: >-
+    The Organization block's sameAs App Store link (id6476114617) returns HTTP 404; the live app is
+    id6751253753.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error envelope is a custom {error, message} JSON object; no application/problem+json anywhere.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No securitySchemes in the OpenAPI; /.well-known/oauth-authorization-server and
+    /oauth-protected-resource 404 on bounti.ai. Bounti is an OAuth client against third-party tools,
+    not an OAuth provider.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration 404 on bounti.ai; SPA shell (not a document) on claw.bounti.ai.
+- id: mcp
+  conforms: partial
+  evidence: >-
+    A discovery manifest is published at /.well-known/mcp.json, but it declares no transport, no
+    endpoint and no tools, so there is no callable MCP server. Discovery only.
+- id: a2a
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json 404 on bounti.ai and return only an SPA
+    HTML shell on claw.bounti.ai and re.bounti.ai. No agent card exists.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming, or webhook surface of any kind is published.
+- id: rfc8594-sunset
+  conforms: false
+  evidence: No Sunset/Deprecation header support and no deprecation policy.
+certifications: []
+compliance_program:
+  published: false
+  detail: >-
+    No trust center, no certifications page, no compliance page. trust.bounti.ai and
+    security.bounti.ai do not resolve; bounti.ai/security, /trust and /compliance all 404. Bounti does
+    publish a domain-specific regulatory posture in its product content — a Fair Housing compliance
+    skill, an AI Disclosure Compliance skill, and a blog post on California AB 723 AI photo disclosure
+    — but that is guidance it sells to real estate agents, not a compliance program it certifies for
+    itself, and it must not be read as one.

@@ -1,0 +1,64 @@
+generated: '2026-08-14'
+method: derived
+source: mcp/bounti-mcp.yml + openapi/_original/bounti-openapi.json
+notes: >-
+  Bounti's agent surface is small and fully aligned: every candidate MCP tool is backed one-to-one by
+  a real, unauthenticated OpenAPI operation, and every OpenAPI operation has a tool. There is no
+  GraphQL surface. The crosswalk is emitted anyway because it records the one real divergence worth
+  knowing: the B.Claw product API at claw.bounti.ai/api is a separate, authenticated surface with no
+  published contract, so none of Bounti's actual product capability (the 303 published B.Claw skills)
+  is reachable as an MCP tool or a REST operation.
+surfaces:
+  openapi:
+    files:
+    - openapi/bounti-llms-txt-api-openapi.yml
+    - openapi/bounti-llms-full-txt-api-openapi.yml
+    original: openapi/_original/bounti-openapi.json
+    live: https://bounti.ai/.well-known/openapi.json
+    gated: false
+  graphql:
+    endpoint: null
+    note: No GraphQL surface found on any Bounti host.
+  mcp:
+    url: null
+    manifest: https://bounti.ai/.well-known/mcp.json
+    gated: false
+    note: >-
+      Discovery manifest only; no MCP endpoint is published, so tools/list could not be called. The
+      tool names below are candidates derived from OpenAPI, not a live tools/list response.
+  product_api:
+    host: https://claw.bounti.ai
+    path: /api
+    gated: true
+    http_status: 401
+    envelope: '{"error":"unauthorized","message":"Authentication required"}'
+    note: No public contract, no published auth documentation.
+crosswalk:
+- tool: getContentIndex
+  category: content
+  rest: [getContentIndex]
+  binding: rest
+  confidence: high
+  note: >-
+    GET https://bounti.ai/llms.txt — no parameters, no request body, returns text/plain. The tool's
+    real input schema is the operation's (empty) parameter set.
+- tool: getFullContent
+  category: content
+  rest: [getFullContent]
+  binding: rest
+  confidence: high
+  note: GET https://bounti.ai/llms-full.txt — no parameters, no request body, returns text/plain.
+mcp_only: []
+rest_only: []
+coverage:
+  tools_named: 2
+  tools_bound: 2
+  mcp_only: 0
+  rest_operations_total: 2
+  rest_operations_with_tool: 2
+  product_capabilities_unbound: 303
+  product_capabilities_note: >-
+    Bounti publishes 303 structured B.Claw skill definitions at https://bounti.ai/skills (captured in
+    skills/bounti-bclaw-skill-catalog.yml). None of them is exposed as an MCP tool or a REST
+    operation; they execute only inside the authenticated B.Claw product. This is the single largest
+    gap between what Bounti can do and what an agent can call.

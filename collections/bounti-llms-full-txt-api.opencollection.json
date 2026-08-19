@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bounti.ai Content Llms Full.txt API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Llms Full.txt",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get comprehensive content dump for deep AI access",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://bounti.ai/llms-full.txt"
+          },
+          "docs": "Returns full product descriptions, features, pricing, blog summaries, and company information for AI deep access."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
