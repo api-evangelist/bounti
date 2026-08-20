@@ -43,6 +43,15 @@ created: '2026-07-17'
 modified: '2026-08-14'
 tags:
 - Company
+- Real-Estate
+- Artificial Intelligence
+- Marketing
+- Sales Enablement
+- Virtual Staging
+- Content Generation
+- AI Agents
+tags_raw:
+- Company
 - Real Estate
 - Artificial Intelligence
 - Marketing
@@ -69,6 +78,8 @@ apis:
   humanURL: https://bounti.ai/
   baseURL: https://bounti.ai
   tags:
+  - llms-txt
+  tags_raw:
   - Llms.txt
   properties:
   - type: OpenAPI
