@@ -2,14 +2,13 @@ generated: '2026-08-14'
 method: derived
 status: candidate
 source: openapi/_original/bounti-openapi.json
-notes: >-
-  Bounti publishes an MCP DISCOVERY MANIFEST at https://bounti.ai/.well-known/mcp.json (new since the
-  2026-07-18 probe, HTTP 200, application/json — saved verbatim at well-known/bounti-mcp-manifest.json).
+notes: 'Bounti publishes an MCP DISCOVERY MANIFEST at https://bounti.ai/.well-known/mcp.json (new since
+  the 2026-07-18 probe, HTTP 200, application/json — saved verbatim at well-known/bounti-mcp-manifest.json).
   It is NOT a callable MCP server: it declares no transport, no endpoint URL and no tool list, only a
   capabilities.content block naming the two static content endpoints. No hosted or stdio MCP server was
-  found for Bounti on the docs, in npm, or in the public MCP registries. The tools below therefore
-  remain a CANDIDATE list derived one-to-one from the operations in the published Bounti.ai Content
-  API (an agent-facing static content API, auth type "none"). No endpoint URL is invented.
+  found for Bounti on the docs, in npm, or in the public MCP registries. The tools below therefore remain
+  a CANDIDATE list derived one-to-one from the operations in the published Bounti.ai Content API (an agent-facing
+  static content API, auth type "none"). No endpoint URL is invented.'
 manifest:
   published: true
   url: https://bounti.ai/.well-known/mcp.json
@@ -42,15 +41,7 @@ tools:
   source_operation: openapi/bounti-llms-full-txt-api-openapi.yml#getFullContent
 deployment:
   mode: none
-  endpoint: null
-  install: null
-  package: null
-  auth: none
-  verified: probed
+  verified: derived
   tools: 2
-  checked: '2026-08-14'
-  source: >-
-    Probed https://bounti.ai/.well-known/mcp.json (200 — manifest only, no endpoint) and
-    https://claw.bounti.ai/mcp (200 HTML SPA shell) and https://claw.bounti.ai/api/mcp (401 JSON
-    "Authentication required"). Nobody ships a reachable MCP server; the two content operations are
-    unauthenticated and directly callable over plain HTTP GET instead.
+  checked: '2026-08-12'
+  source: catalog MCP census

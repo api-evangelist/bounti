@@ -1,25 +1,28 @@
 {
   "provider": "bounti",
   "sources": [
-    "bounti-llms-full-txt-api-openapi.yml",
-    "bounti-llms-txt-api-openapi.yml",
-    "well-known/bounti-openapi.json"
+    "_original/bounti-content-api-openapi.json"
   ],
   "outputs": [
     "bounti-llms-full-txt-api-openapi.yml",
     "bounti-llms-txt-api-openapi.yml"
   ],
-  "archived": [
-    "archived well-known/bounti-openapi.json"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
-    "discovered stray spec: well-known/bounti-openapi.json",
-    "bounti-openapi.json: tagged GET /llms.txt -> Llms.txt",
-    "bounti-openapi.json: tagged GET /llms-full.txt -> Llms Full.txt",
-    "bounti-openapi.json: declared missing tag: Llms Full.txt",
-    "bounti-openapi.json: declared missing tag: Llms.txt"
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "bounti-content-api-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "bounti-content-api-openapi.json: tagged paths GET /llms.txt -> Llms.txt",
+    "bounti-content-api-openapi.json: tagged paths GET /llms-full.txt -> Llms Full.txt",
+    "bounti-content-api-openapi.json: declared missing tag: Llms Full.txt",
+    "bounti-content-api-openapi.json: declared missing tag: Llms.txt",
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "_original/bounti-openapi.json: archived document superseded by a larger archived document",
+    "bounti-llms-full-txt-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bounti-llms-txt-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Bounti.ai Content Llms Full.txt Llms.txt API
+  title: Bounti.ai Content Llms.txt API
   description: Static content API for AI agents to access Bounti.ai product information, documentation, and blog content.
   version: 1.0.0
 servers:
