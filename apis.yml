@@ -55,7 +55,7 @@ created: '2026-07-17'
 modified: '2026-08-14'
 tags:
 - Company
-- Real-Estate
+- Real Estate
 - Artificial Intelligence
 - Marketing
 - Sales Enablement
@@ -71,12 +71,12 @@ tags_raw:
 - Virtual Staging
 - Content Generation
 - AI Agents
+- Real-Estate
 apis:
 - aid: bounti:bounti-llms-full-txt-api
   name: Bounti Llms Full.txt API
   description: The Llms Full.txt API from Bounti — 1 operation(s) for llms full.txt.
   humanURL: https://bounti.ai/
-  baseURL: https://bounti.ai
   tags:
   - Llms Full.txt
   properties:
@@ -88,7 +88,6 @@ apis:
   name: Bounti Llms.txt API
   description: The Llms.txt API from Bounti — 1 operation(s) for llms.txt.
   humanURL: https://bounti.ai/
-  baseURL: https://bounti.ai
   tags:
   - llms-txt
   tags_raw:
