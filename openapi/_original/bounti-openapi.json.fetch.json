@@ -1,0 +1,12 @@
+{
+ "url": "https://bounti.ai/.well-known/openapi.json",
+ "requested_url": "https://bounti.ai/.well-known/openapi.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 1493,
+ "sha256": "3db29ccada8dafde6047cde8aee9675f84f97f088d53efe1aeda5f1662e9eed1",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
