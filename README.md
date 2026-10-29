@@ -64,6 +64,124 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Bounti is a company surfaced as a portfolio company of bloomberg-beta, gv and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Bounti (Bounti Labs, bounti.ai) is an AI-powered real estate visualization and automation platform founded in 2023 by Ashar Rizqi and Matt Cooley and backed by GV (Google Ventures), Bloomberg Beta, Floodgate, Haystack, Octave Ventures and MS&AD. Its products include AI virtual staging and photo enhancement, cinematic listing-photo animation, automated marketing-video creation, before/after reveal videos, collaborative client studios, and B.Claw — an AI operating system that consolidates 13+ real estate tools (Gmail, calendar, CRM, WhatsApp, website builder) into one conversational interface. Bounti does not publish a general integration API, but it does expose an agent-facing, unauthenticated Content API (advertised via an AI-plugin manifest at /.well-known/ai-plugin.json, alongside an MCP discovery manifest at /.well-known/mcp.json) plus /llms.txt and /llms-full.txt so AI assistants can accurately answer questions about its products, pricing, and content. Bounti also publishes a catalog of 303 named B.Claw skills as machine-readable schema.org SoftwareApplication definitions at bounti.ai/skills, and 34 connector listings at bounti.ai/integrations — but those skills execute only inside the authenticated B.Claw product, whose API at claw.bounti.ai/api has no published contract.
 
-Backed by: bloomberg-beta, gv — https://bounti.ai/
+**Areas:** Company · Real Estate · Artificial Intelligence · Marketing · Sales Enablement · Virtual Staging · Content Generation · AI Agents
+
+## Bounti on APIs.io
+
+Everything profiled for Bounti is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bounti/](https://apis.io/providers/bounti/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Bounti Llms Full.txt API](https://apis.io/apis/bounti/bounti-llms-full-txt-api/) — The Llms Full.txt API from Bounti — 1 operation(s) for llms full.txt.
+- [Bounti Llms.txt API](https://apis.io/apis/bounti/bounti-llms-txt-api/) — The Llms.txt API from Bounti — 1 operation(s) for llms.txt.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [bounti](https://apis.io/servers/bounti/bounti/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Bounti.ai Content Llms Full.txt API](https://apis.io/collections/bounti/open-bounti-llms-full-txt-api/)
+- [Bounti.ai Content Llms Full.txt Llms.txt API](https://apis.io/collections/bounti/open-bounti-llms-txt-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Bounti Content Api Overlay](https://apis.io/overlays/bounti/bounti-content-api-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bounti Authentication](https://apis.io/security/bounti/bounti-authentication/)
+- [Bounti Domain Security](https://apis.io/security/bounti/bounti-domain-security/)
+- [Bounti Vulnerability Disclosure](https://apis.io/security/bounti/bounti-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Bounti Plans Pricing](https://apis.io/plans/bounti/bounti-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Bounti Rate Limits](https://apis.io/rate-limits/bounti/bounti-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://bounti.ai/)
+- [Pricing](https://bounti.ai/pricing)
+- [Sign up](https://claw.bounti.ai/sign-up)
+- [Blog](https://bounti.ai/blog)
+- [Terms of service](https://bounti.ai/terms-of-service)
+- [Privacy policy](https://bounti.ai/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 41.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 42.2 |
+| Contract governance | 4.5 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 69.7 |
+
+**Agent readiness 25.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 28.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bounti/](https://apis.io/providers/bounti/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bounti: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bounti/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
